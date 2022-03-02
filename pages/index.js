@@ -96,7 +96,7 @@ export default function Home({ Data }) {
                     src={val}
                     width={80}
                     height={80}
-                    alt={idx}
+                    alt="preview-image"
                     draggable="false"
                     br="8px" />
                 ))

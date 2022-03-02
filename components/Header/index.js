@@ -27,8 +27,8 @@ export const Header = () => {
           </Ul>
         </SubNav>
         <Profile>
-          <Image src='/iconcart.svg' width={24} height={24} draggable="false" />
-          <Image src='/imageavatar.png' width={36} height={36} draggable="false" />
+          <Image src='/iconcart.svg' width={24} height={24} draggable="false" alt='cart'/>
+          <Image src='/imageavatar.png' width={36} height={36} draggable="false" alt='profile-image'/>
         </Profile>
       </Nav>
     </header>

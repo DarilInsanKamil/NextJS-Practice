@@ -96,7 +96,7 @@ export default function Home({ Data }) {
                     src={val}
                     width={80}
                     height={80}
-                    alt={idx}
+                    alt="preview-image"
                     draggable="false"
                     br="8px" />
                 ))
@@ -170,7 +170,10 @@ export default function Home({ Data }) {
               <BtnCart
                 m={width < 768 ? "20px 0px 0px 0px" : "0px"}
                 bg="#FFA500"
-                w={width < 768 ? "100%" : "60%"}>
+                w={width < 768 ? "100%" : "60%"}
+                sc="1.02"
+                bs="rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
+                >
                 <Images
                   src="/iconcart.svg"
                   width={16}

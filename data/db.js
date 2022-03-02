@@ -1,4 +1,3 @@
-
 export function allData() {
     // Call an external API endpoint to get posts
     const Data = [

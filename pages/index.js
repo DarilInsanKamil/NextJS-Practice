@@ -1,8 +1,8 @@
 import Head from "next/head"
 import { Layout } from "../components/Layout";
 import { useState } from "react";
-import { allData } from './data/db'
-import { Product, MainSection, BtnLeft, BtnRight, Text, PreviewImage, Images, DescProduct, BtnCart, Box } from "./styled.overview";
+import { allData } from '../data/db'
+import { Product, MainSection, BtnLeft, BtnRight, Text, PreviewImage, Images, DescProduct, BtnCart, Box } from "../styles/styled.overview";
 import useDeviceSize from "../logic/widthandheight";
 //Async function for data
 export async function getStaticProps() {

@@ -57,6 +57,11 @@ export const BtnCart = styled.div`
     margin: ${props => props.m || " 0px"};
     align-items: center;
     justify-content: ${props => props.jc || "center"};
+    box-shadow: ${props => props.bs || "0px"};
+    &:hover {
+        transform: scale(${props => props.sc || "1"});
+    };
+    cursor: pointer;
 `
 
 export const PreviewImage = styled.div`

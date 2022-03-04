@@ -14,7 +14,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: ${props => props.fd};
     margin:0 auto;
-    position:relative;
+    position: relative;
     height: 100vh;
     @media(max-width: 768px){
         width: 100%;
@@ -42,12 +42,37 @@ export const Footers = styled.footer`
     background-color: #1B8057;
     padding: ${props => props.p};
 `
-export const Holes = styled.p`
+//Banner
+export const Hole = styled.section`
     color: transparent;
     padding: 5px;
     background-color: ${props => props.bg};
     width: 10px;
+    border: ${props => props.b};
     border-radius: 100px;
     margin: 10px;
     height: 5px;
+`
+export const BtnLeft = styled.li`
+    border: 0px;
+    position: absolute;
+    width: fit-content;
+    left: 20px;
+    z-index: 99;
+    padding: 10px 12px;
+    // border-radius: 100px;
+    // background-color: #fff;   
+    display: ${props => props.d || "flex"};   
+    align-items: center;
+    justify-content: center;      
+`
+export const BtnRight = styled.button`
+    position: absolute;
+    border: 0px;
+    right: 20px;
+    z-index: 99;
+    padding: 10px 12px;
+
+    align-items: center;
+    justify-content: center;
 `

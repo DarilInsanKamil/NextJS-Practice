@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Holes } from "../styles/styled";
+import { BtnLeft, BtnRight, Hole } from "../styles/styled";
 
 
 export default function Banner() {
     const [indexImg, setIndexImg] = useState(0);
-    const [current, setCurrent] = useState(0);
     const [nextIndex, setNextIndex] = useState(1);
 
     const Data = [
@@ -46,19 +45,25 @@ export default function Banner() {
     }
     return (
         <>
-            <button onClick={handlePrev}>{"<"}</button>
-            <Image
-                src={Data[indexImg]}
-                alt="banner"
-                width={1000}
-                height={250}
-            />
-            <button onClick={handleNext}>{">"}</button>
+            <div style={{position: 'relative', width: 'fit-content', alignItems: 'center', display: 'flex', margin: '0 auto'}}>
+                <BtnLeft onClick={handlePrev}>{"<"}</BtnLeft>
+                <Image
+                    src={Data[indexImg]}
+                    alt="banner"
+                    width={1200}
+                    height={250}
+                    draggable="false"
+                />
+                <BtnRight onClick={handleNext}>{">"}</BtnRight>
+            </div>
             {
                 Data.map((el, idx) => (
-                    <div onClick={() => handleClick(idx)} key={idx}>
-                        <Holes bg={indexImg === idx ? "red" : 'blue'}>{idx}</Holes>
-                    </div>
+                    <ul onClick={() => handleClick(idx)} key={idx}>
+                        <Hole
+                            bg={indexImg === idx ? "red" : "transparent"}
+                            b={indexImg === idx ? "2px solid red" : "1px solid black"}>
+                        </Hole>
+                    </ul>
                 ))
             }
         </>

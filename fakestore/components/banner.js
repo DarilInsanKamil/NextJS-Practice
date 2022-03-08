@@ -1,12 +1,25 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { useEffect, useState } from "react";
-import { BtnLeft, BtnRight, Hole } from "../styles/styled";
+import api from '../pages/api/hello'
+import Image from "next/image";
+import useDeviceSize from "../logic/width-height";
 
+// export async function getSortedPostsData() {
+//     // Instead of the file system,
+//     // fetch post data from an external API endpoint
+//     const res = await api()
+//     const Data = await res.json()
+//     return {
+//         props: {
+//             Data,
+//         }
+//     }
+// }
 
 export default function Banner() {
     const [indexImg, setIndexImg] = useState(0);
     const [nextIndex, setNextIndex] = useState(1);
-
+    const [width, height] = useDeviceSize()
     const Data = [
         '/banner1.jpg',
         '/banner2.jpg',
@@ -44,28 +57,34 @@ export default function Banner() {
         setIndexImg(idx)
     }
     return (
-        <>
-            <div style={{position: 'relative', width: 'fit-content', alignItems: 'center', display: 'flex', margin: '0 auto'}}>
-                <BtnLeft onClick={handlePrev}>{"<"}</BtnLeft>
-                <Image
-                    src={Data[indexImg]}
-                    alt="banner"
-                    width={1200}
-                    height={250}
-                    draggable="false"
-                />
-                <BtnRight onClick={handleNext}>{">"}</BtnRight>
+        <div>
+            <div className="flex">
+                {/* <button onClick={handlePrev} name="arrowprev" >
+                    <Image src="/iconprevious.svg" alt="arrow" width="12px" height="12px" />
+                </button> */}
+                <figure className="z-0 relative m-auto">
+                    <Image
+                        src={Data[indexImg]}
+                        alt="banner"
+                        width={1200}
+                        height={width < 768 ? 350 : 300}
+                        className="rounded-xl sm:rounded-none"
+                        draggable="false"
+                    />
+                    <section className="absolute bottom-[5px] left-[20px] hidden">
+                        {
+                            Data.map((el, idx) => (
+                                <ul onClick={() => handleClick(idx)} key={idx}>
+                                    <li className="w-[10px] h-[10px] mr-2 bg-lime-500 my-5 rounded-xl"></li>
+                                </ul>
+                            ))
+                        }
+                    </section>
+                </figure>
+                {/* <button onClick={handleNext} name="arrowprev">
+                    <Image src="/iconnext.svg" alt="arrow" width="12px" height="12px" />
+                </button> */}
             </div>
-            {
-                Data.map((el, idx) => (
-                    <ul onClick={() => handleClick(idx)} key={idx}>
-                        <Hole
-                            bg={indexImg === idx ? "red" : "transparent"}
-                            b={indexImg === idx ? "2px solid red" : "1px solid black"}>
-                        </Hole>
-                    </ul>
-                ))
-            }
-        </>
+        </div>
     )
 }

@@ -1,13 +1,14 @@
 import Footer from "./Footer"
 import Header from "./Header"
-import { Container, MainBox } from '../styles/styled'
 
 export default function Layout({ children }) {
     return (
-        <Container fd="column">
+        <div>
             <Header />
-            <MainBox>{children}</MainBox>
-            <Footer />
-        </Container>
+            <div>
+                {children}
+            </div>
+            {/* <Footer /> */}
+        </div>
     )
 }

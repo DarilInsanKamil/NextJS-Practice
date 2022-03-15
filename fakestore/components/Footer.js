@@ -5,18 +5,18 @@ export default function Footer() {
         <>
             {
                 width < 768 ?
-                    <div className="">
+                    <div className="bg-sky-700 text-white flex justify-around p-4">
                         <p>Kebijakan privasi</p>
                         <p>Syarat Layanan</p>
                     </div>
                     :
-                    <div>
+                    <div className='bg-sky-700 text-white flex justify-around p-10'>
                         <ul>
-                            <h1>FakeStore</h1>
+                            <li className='text-4xl font-medium'>FakeStore</li>
                             <li>Jl.Kenangan, Kembangan Jakarta Barat DKI Jakarta</li>
                         </ul>
-                        <ul>
-                            <h3>Layanan Kami</h3>
+                        <ul className='text-slate-300'>
+                            <h3 className='text-xl text-white font-medium'>Layanan Kami</h3>
                             <li>Bantuan</li>
                             <li>Metode Pembayaran</li>
                             <li>Fake Pay</li>
@@ -27,8 +27,8 @@ export default function Footer() {
                             <li>Garansi Fake</li>
                             <li>Hubungi Kami</li>
                         </ul>
-                        <ul>
-                            <h3>Jelajahi</h3>
+                        <ul className='text-slate-300'>
+                            <h3 className='text-xl text-white font-medium'>Jelajahi</h3>
                             <li>Tentang Kami</li>
                             <li>Karir</li>
                             <li>Kebijakan FakeStore</li>
@@ -39,8 +39,8 @@ export default function Footer() {
                             <li>Flash Sale</li>
                             <li>Kontak Media</li>
                         </ul>
-                        <ul>
-                            <h3>Ikuti Kami</h3>
+                        <ul className='text-slate-300'>
+                            <h3 className='text-xl text-white font-medium'>Ikuti Kami</h3>
                             <li>Facebook</li>
                             <li>Instagram</li>
                             <li>Github</li>

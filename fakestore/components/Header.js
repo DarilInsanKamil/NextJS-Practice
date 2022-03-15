@@ -1,10 +1,11 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Header() {
     return (
         <header className="flex bg-sky-600 text-slate-200 items-center mb-1">
             <div className="flex justify-evenly p-2 items-center w-full">
-                <p className="sm:hidden font-bold text-2xl">FakeStore</p>
+             <Link href='/'><p className="sm:hidden font-bold text-2xl">FakeStore</p></Link>
                 <section>
                     <label className="border-2 rounded-md px-2 py-1 flex items-center justify-between sm:w-full w-[700px]">
                         <input
@@ -21,10 +22,10 @@ export default function Header() {
                         />
                     </label>
                     <ul className="flex text-smmd sm:text-[10px] mt-1">
-                        <li className="mr-2" >Electronic</li>
-                        <li className="mr-2" >Men Clothing</li>
-                        <li className="mr-2" >Women Clothing</li>
-                        <li>Jewelery</li>
+                        <Link href="/category/electronic"><li className="mr-2" >Electronic</li></Link>
+                        <Link href="/category/menclothing"><li className="mr-2" >Men Clothing</li></Link>
+                        <Link href="/category/womenclothing"><li className="mr-2" >Women Clothing</li></Link>
+                        <Link href='/category/jewelery'><li>Jewelery</li></Link>
                     </ul>
                 </section>
                 <div className="flex w-[150px] sm:w-fit justify-between">
@@ -60,8 +61,8 @@ export default function Header() {
                     </figure>
                 </div>
                 <section className="sm:hidden items-center flex w-[180px] justify-between">
-                    <p className="border-2 border-white rounded-md px-4 py-2">Masuk</p>
-                    <p className="bg-white text-sky-700 px-4 py-2 rounded-md">Daftar</p>
+                    <p className="border-2 text-white font-medium border-white rounded-md px-4 py-2">Masuk</p>
+                    <p className="bg-white text-sky-700 font-medium px-4 py-2 rounded-md">Daftar</p>
                 </section>
             </div>
         </header >

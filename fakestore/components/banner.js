@@ -59,9 +59,9 @@ export default function Banner() {
     return (
         <div>
             <div className="flex">
-                {/* <button onClick={handlePrev} name="arrowprev" >
+                <button onClick={handlePrev} name="arrowprev" >
                     <Image src="/iconprevious.svg" alt="arrow" width="12px" height="12px" />
-                </button> */}
+                </button>
                 <figure className="z-0 relative m-auto">
                     <Image
                         src={Data[indexImg]}
@@ -71,19 +71,19 @@ export default function Banner() {
                         className="rounded-xl sm:rounded-none"
                         draggable="false"
                     />
-                    <section className="absolute bottom-[5px] left-[20px] hidden">
+                    <section className="absolute bottom-[5px] left-[20px] ">
                         {
                             Data.map((el, idx) => (
                                 <ul onClick={() => handleClick(idx)} key={idx}>
-                                    <li className="w-[10px] h-[10px] mr-2 bg-lime-500 my-5 rounded-xl"></li>
+                                    <li className="w-[10px] h-[10px] mr-2 bg-slate-500 my-5 rounded-xl"></li>
                                 </ul>
                             ))
                         }
                     </section>
                 </figure>
-                {/* <button onClick={handleNext} name="arrowprev">
+                <button onClick={handleNext} name="arrowprev">
                     <Image src="/iconnext.svg" alt="arrow" width="12px" height="12px" />
-                </button> */}
+                </button>
             </div>
         </div>
     )

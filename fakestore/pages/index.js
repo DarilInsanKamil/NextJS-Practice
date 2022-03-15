@@ -50,6 +50,7 @@ const Home = ({ datas }) => {
       setN2(prevIndex1)
     }
   }
+  
 
   return (
     <>
